@@ -81,7 +81,7 @@ body {
     color: #ffffff;
   }
   
-  /* Choice Display */
+
   .choice-display {
     background: #ffffff;
     color: #4e54c8;
@@ -93,7 +93,7 @@ body {
     text-transform: capitalize;
   }
   
-  /* Result Announcement */
+
   #result {
     font-size: 18px;
     font-weight: bold;
@@ -102,7 +102,7 @@ body {
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
   }
   
-  /* Score Section */
+
   h5 {
     background: rgba(255, 255, 255, 0.2);
     padding: 10px;
@@ -110,13 +110,13 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
   
-  /* Round Tracker */
+
   #round-number {
     color: #ffe600;
     font-size: 1.5rem;
   }
   
-  /* Final Result Section */
+
   #final-message {
     font-size: 22px;
     font-weight: bold;
@@ -129,29 +129,7 @@ body {
   }
   
   /* Responsive Design */
-  @media screen and (max-width: 768px) {
-    body {
-      padding: 10px;
-      height: auto;
-    }
   
-    .container {
-      padding: 15px;
-      max-width: 100%;
-    }
-  
-    h1 {
-      font-size: 2rem;
-    }
-  
-    button {
-      font-size: 14px;
-    }
-  
-    #result {
-      font-size: 16px;
-    }
-  }
   #background-container {
     position: fixed;
     top: 0;
@@ -167,7 +145,7 @@ body {
     background-image: url('imgs/squid.jpg');
     background-size: cover;
     background-position: center;
-    animation: fadeOut 4s linear forwards; /* 2s visible + 5s fade out */
+    animation: fadeOut 5s linear forwards; /* 2s visible + 5s fade out */
   }
   
   /* Fading out effect after 2 seconds */
