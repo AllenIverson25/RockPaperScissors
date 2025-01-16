@@ -1,36 +1,54 @@
-
 const getUserChoice = (userInput) => {
   userInput = userInput.toLowerCase();
-  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
-    return userInput;
-  } else {
-    console.log('Invalid choice!');
-    return null;
+  switch (userInput) {
+    case 'rock':
+    case 'paper':
+    case 'scissors':
+      return userInput;
+    default:
+      console.log('Invalid choice!');
+      return null;
   }
 };
 
 const getComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * 3);
-  if (randomNumber === 0) {
-    return 'rock';
-  } else if (randomNumber === 1) {
-    return 'paper';
-  } else {
-    return 'scissors';
+  switch (randomNumber) {
+    case 0:
+      return 'rock';
+    case 1:
+      return 'paper';
+    case 2:
+      return 'scissors';
+    default:
+      return 'rock'; // Fallback in case of error (shouldn't happen)
   }
 };
 
 const determineWinner = (userChoice, computerChoice) => {
-  if (userChoice === computerChoice) {
-    return 'It is a tie!';
-  } else if (
-    (userChoice === 'rock' && computerChoice === 'scissors') ||
-    (userChoice === 'paper' && computerChoice === 'rock') ||
-    (userChoice === 'scissors' && computerChoice === 'paper')
-  ) {
-    return 'You win!';
-  } else {
-    return 'Computer wins!';
+  switch (userChoice) {
+    case computerChoice:
+      return 'It is a tie!';
+    case 'rock':
+      if (computerChoice === 'scissors') {
+        return 'You win!';
+      } else {
+        return 'Computer wins!';
+      }
+    case 'paper':
+      if (computerChoice === 'rock') {
+        return 'You win!';
+      } else {
+        return 'Computer wins!';
+      }
+    case 'scissors':
+      if (computerChoice === 'paper') {
+        return 'You win!';
+      } else {
+        return 'Computer wins!';
+      }
+    default:
+      return 'Invalid choice!';
   }
 };
 
@@ -82,11 +100,14 @@ const endGame = () => {
   document.getElementById('game-area').classList.add('d-none');
   document.getElementById('final-result').classList.remove('d-none');
 
-  const finalMessage = playerScore > computerScore
-    ? 'Congratulations! You won the game!'
-    : playerScore < computerScore
-    ? 'Sorry, the computer won this time!'
-    : 'It is a tie!';
+  let finalMessage;
+  if (playerScore > computerScore) {
+    finalMessage = 'Congratulations! You won the game!';
+  } else if (playerScore < computerScore) {
+    finalMessage = 'Sorry, the computer won this time!';
+  } else {
+    finalMessage = 'It is a tie!';
+  }
 
   document.getElementById('final-message').textContent = finalMessage;
 };
