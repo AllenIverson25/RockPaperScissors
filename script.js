@@ -25,6 +25,10 @@ const getComputerChoice = () => {
   }
 };
 
+const rockImage = 'images/rock.webp'; 
+const paperImage = 'images/paper.jpg';  
+const scissorsImage = 'images/siccors.jpg';  
+
 const determineWinner = (userChoice, computerChoice) => {
   switch (userChoice) {
     case computerChoice:
@@ -69,8 +73,23 @@ document.getElementById('start-game').addEventListener('click', () => {
 
 const playRound = (userChoice) => {
   const computerChoice = getComputerChoice();
-  document.getElementById('user-choice').textContent = userChoice;
-  document.getElementById('computer-choice').textContent = computerChoice;
+
+ 
+  if (userChoice === 'rock') {
+    document.getElementById('user-choice').src = rockImage;
+  } else if (userChoice === 'paper') {
+    document.getElementById('user-choice').src = paperImage;
+  } else if (userChoice === 'scissors') {
+    document.getElementById('user-choice').src = scissorsImage;
+  }
+
+  if (computerChoice === 'rock') {
+    document.getElementById('computer-choice').src = rockImage;
+  } else if (computerChoice === 'paper') {
+    document.getElementById('computer-choice').src = paperImage;
+  } else if (computerChoice === 'scissors') {
+    document.getElementById('computer-choice').src = scissorsImage;
+  }
 
   const result = determineWinner(userChoice, computerChoice);
   document.getElementById('result').textContent = result;
