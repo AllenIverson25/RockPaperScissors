@@ -22,7 +22,7 @@ const getComputerChoice = () => {
 
 const determineWinner = (userChoice, computerChoice) => {
   if (userChoice === computerChoice) {
-    return 'It\'s a tie!';
+    return 'It is a tie!';
   } else if (
     (userChoice === 'rock' && computerChoice === 'scissors') ||
     (userChoice === 'paper' && computerChoice === 'rock') ||
@@ -86,7 +86,7 @@ const endGame = () => {
     ? 'Congratulations! You won the game!'
     : playerScore < computerScore
     ? 'Sorry, the computer won this time!'
-    : 'It\'s a tie!';
+    : 'It is a tie!';
 
   document.getElementById('final-message').textContent = finalMessage;
 };
