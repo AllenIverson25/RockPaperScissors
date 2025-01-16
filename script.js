@@ -21,7 +21,7 @@ const getComputerChoice = () => {
     case 2:
       return 'scissors';
     default:
-      return 'rock'; // Fallback in case of error (shouldn't happen)
+      return 'rock'; 
   }
 };
 
