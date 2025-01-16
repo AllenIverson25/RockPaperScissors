@@ -26,8 +26,8 @@ const getComputerChoice = () => {
 };
 
 const rockImage = 'images/rock.webp'; 
-const paperImage = 'images/paper.jpg';  
-const scissorsImage = 'images/siccors.jpg';  
+const paperImage = 'images/tol1.jpg';  
+const scissorsImage = 'images/dog.jpg';  
 
 const determineWinner = (userChoice, computerChoice) => {
   switch (userChoice) {
