@@ -1,49 +1,30 @@
 const getUserChoice = (input) => {
   input = input.toLowerCase();
-  switch (input) {
-    case 'rock':
-    case 'paper':
-    case 'scissors':
-      return input;
-    default:
-      return null;
-  }
+  if (input === 'rock' || input === 'paper' || input === 'scissors') return input;
+  return null;
 };
 
 const getComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * 3);
-  switch (randomNumber) {
-    case 0:
-      return 'rock';
-    case 1:
-      return 'paper';
-    case 2:
-      return 'scissors';
-  }
+  if (randomNumber === 0) return 'rock';
+  if (randomNumber === 1) return 'paper';
+  return 'scissors';
 };
 
 const determineWinner = (user, computer) => {
-  switch (true) {
-    case user === computer:
-      return 'It is a tie!';
-    case user === 'rock' && computer === 'scissors':
-    case user === 'paper' && computer === 'rock':
-    case user === 'scissors' && computer === 'paper':
-      return 'You win!';
-    default:
-      return 'Computer wins!';
-  }
+  if (user === computer) return 'It is a tie!';
+  if (
+    (user === 'rock' && computer === 'scissors') ||
+    (user === 'paper' && computer === 'rock') ||
+    (user === 'scissors' && computer === 'paper')
+  ) return 'You win!';
+  return 'You Lose Boo Hoo!';
 };
 
 const getImage = (choice) => {
-  switch (choice) {
-    case 'rock':
-      return 'images/rock.webp';
-    case 'paper':
-      return 'images/plz.jpg';
-    case 'scissors':
-      return 'images/dog.jpg';
-  }
+  if (choice === 'rock') return 'images/rock.webp';
+  if (choice === 'paper') return 'images/plz.jpg';
+  return 'images/dog.jpg';
 };
 
 let round = 1, playerScore = 0, computerScore = 0;
@@ -65,7 +46,7 @@ const playRound = (userChoice) => {
   document.getElementById('result').textContent = result;
 
   if (result === 'You win!') playerScore++;
-  else if (result === 'Computer wins!') computerScore++;
+  else if (result === 'You Lose Boo Hoo!') computerScore++;
 
   document.getElementById('player-score').textContent = playerScore;
   document.getElementById('computer-score').textContent = computerScore;
@@ -74,11 +55,9 @@ const playRound = (userChoice) => {
   else document.getElementById('round-number').textContent = ++round;
 };
 
-const setupButtonListeners = () => {
-  document.getElementById('rock').addEventListener('click', () => playRound('rock'));
-  document.getElementById('paper').addEventListener('click', () => playRound('paper'));
-  document.getElementById('scissors').addEventListener('click', () => playRound('scissors'));
-};
+document.getElementById('rock').addEventListener('click', () => playRound('rock'));
+document.getElementById('paper').addEventListener('click', () => playRound('paper'));
+document.getElementById('scissors').addEventListener('click', () => playRound('scissors'));
 
 const endGame = () => {
   document.getElementById('game-area').classList.add('d-none');
@@ -103,5 +82,3 @@ document.getElementById('reset-game').addEventListener('click', () => {
   document.getElementById('final-result').classList.add('d-none');
   document.getElementById('game-area').classList.remove('d-none');
 });
-
-setupButtonListeners();
