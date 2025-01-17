@@ -82,3 +82,13 @@ document.getElementById('reset-game').addEventListener('click', () => {
   document.getElementById('final-result').classList.add('d-none');
   document.getElementById('game-area').classList.remove('d-none');
 });
+window.addEventListener("load", () => {
+  const container = document.querySelector(".container"); 
+  container.classList.add("loaded"); 
+});
+
+const startGameButton = document.getElementById("start-game");
+startGameButton.addEventListener("click", () => {
+  const container = document.querySelector(".container");
+  container.classList.add("zoomed"); 
+});
