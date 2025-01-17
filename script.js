@@ -40,7 +40,7 @@ const getImage = (choice) => {
     case 'rock':
       return 'images/rock.webp';
     case 'paper':
-      return 'images/tol1.jpg';
+      return 'images/plz.jpg';
     case 'scissors':
       return 'images/dog.jpg';
   }
