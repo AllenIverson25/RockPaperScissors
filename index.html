@@ -9,54 +9,65 @@
 </head>
 <body>
 
-  <div class="container text-center m-5 water ">
-    <h1>Rock, Paper, Scissors</h1>
+  <div class="container text-center mt-5 mb-5 pt-5">
+    <h1 class="mb-4">Rock, Paper, Scissors</h1>
+    
+    <!-- Username Form -->
     <div id="username-form" class="my-4">
       <p>Please enter your name:</p>
       <input type="text" id="username" class="form-control mb-3" placeholder="Your Name">
       <button class="btn btn-primary" id="start-game">Start Game</button>
     </div>
-   
+
+    <!-- Game Area -->
     <div id="game-area" class="d-none">
       <h2>Welcome, <span id="player-name"></span>!</h2>
       <h3>Round <span id="round-number">1</span>/5</h3>
+      
       <div class="my-4">
-        <div class="row">
-          <div class="col-md-6">
+        <!-- Player and Computer Choices -->
+        <div class="row text-center">
+          <div class="col-md-6 col-12 mb-3">
             <h4>Your Choice</h4>
-            <img id="user-choice" class="choice-display mb-4" src="" alt="User's choice" style="width: 150px;">
+            <img id="user-choice" class="choice-display mb-4 img-fluid" src="" alt="User's choice" style="max-width: 150px;">
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-12 mb-3">
             <h4>Computer's Choice</h4>
-            <img id="computer-choice" class="choice-display" src="" alt="Computer's choice" style="width: 150px;">
+            <img id="computer-choice" class="choice-display img-fluid" src="" alt="Computer's choice" style="max-width: 150px;">
           </div>
         </div>
       </div>
+
+      <!-- Choices -->
       <div class="my-4">
         <h4>Make Your Choice:</h4>
-        <button class="btn btn-outline-primary" id="rock">Rock</button>
-        <button class="btn btn-outline-primary" id="paper">Paper</button>
-        <button class="btn btn-outline-primary" id="scissors">Scissors</button>
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+          <button class="btn btn-outline-primary" id="rock">Rock</button>
+          <button class="btn btn-outline-primary" id="paper">Paper</button>
+          <button class="btn btn-outline-primary" id="scissors">Scissors</button>
+        </div>
       </div>
+      
+      <!-- Scores -->
       <p id="result" class="my-3"></p>
-      <div class="row">
-        <div class="col-md-6">
+      <div class="row text-center">
+        <div class="col-md-6 col-12">
           <h5>Your Score: <span id="player-score">0</span></h5>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-12">
           <h5>Computer's Score: <span id="computer-score">0</span></h5>
         </div>
       </div>
     </div>
 
+    <!-- Final Result -->
     <div id="final-result" class="d-none my-4">
       <h2 id="final-message"></h2>
       <button class="btn btn-success" id="reset-game">Play Again</button>
     </div>
 
   </div>
-</div>
-</div>
+
   <script src="script.js"></script>
 </body>
 </html>

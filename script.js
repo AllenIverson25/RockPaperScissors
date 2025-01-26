@@ -87,8 +87,3 @@ window.addEventListener("load", () => {
   container.classList.add("loaded"); 
 });
 
-const startGameButton = document.getElementById("start-game");
-startGameButton.addEventListener("click", () => {
-  const container = document.querySelector(".container");
-  container.classList.add("zoomed"); 
-});
