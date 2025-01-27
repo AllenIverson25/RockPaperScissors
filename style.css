@@ -8,8 +8,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-y: auto; /* Enables vertical scrolling */
-  background-size: cover; /* Prevents background repeat */
+  overflow-y: auto; 
+  background-size: cover; 
 }
 
 .container {
